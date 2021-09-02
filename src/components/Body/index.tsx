@@ -3,6 +3,7 @@ import { Text, TouchableOpacity, View } from 'react-native';
 
 import { styles } from './styles'
 import { Breathe } from '../Breathe';
+import { ProgressBar } from '../ProgressBar';
 
 export function Body() {
 
@@ -10,6 +11,7 @@ export function Body() {
 
   return (
     <View style={styles.container}>
+      <ProgressBar />
 
       <Breathe start={start} />
 

@@ -9,8 +9,12 @@ type BreatheProps = {
   start: boolean,
 };
 
-const useBreatheState = () => {
-  return useAnimationState({
+export function Breathe({ start }: BreatheProps) {
+  const [countTime, setCountTime] = useState<number>(0);
+
+  const time: number = 2000
+
+  const breatheAnimateState = useAnimationState({
     breatheIn: {
       width: 250,
       height: 250,
@@ -20,14 +24,6 @@ const useBreatheState = () => {
       height: 150,
     }
   })
-}
-
-export function Breathe({ start }: BreatheProps) {
-  const [countTime, setCountTime] = useState<number>(0);
-
-  const time: number = 3000
-
-  const breatheAnimateState = useBreatheState();
 
   useEffect(() => {
     if (start) {
@@ -45,26 +41,24 @@ export function Breathe({ start }: BreatheProps) {
     setTimeout(() => { setCountTime(countTime + 1) }, time);
   }, [countTime, start])
 
-
-
   return (
-    <>
-
-
-      <MotiView
-        style={styles.outsideAirContainer}
-        state={breatheAnimateState}
-        delay={time}
-        transition={{
-          type: 'timing',
-          duration: time,
-        }}
-      >
-        <View style={styles.indoorAirContainer}>
-          {/* <Text>respirar</Text> */}
-          <Entypo name="air" size={24} color={theme.colors.white} />
-        </View>
-      </MotiView>
-    </>
+    <View style={styles.breatheContainer}>
+      <AnimatePresence >
+        <MotiView
+          style={styles.outsideAirContainer}
+          state={breatheAnimateState}
+          delay={time}
+          transition={{
+            type: 'timing',
+            duration: time,
+          }}
+        >
+          <View style={styles.indoorAirContainer}>
+            {/* <Text>respirar</Text> */}
+            <Entypo name="air" size={24} color={theme.colors.white} />
+          </View>
+        </MotiView>
+      </AnimatePresence>
+    </View>
   )
 }

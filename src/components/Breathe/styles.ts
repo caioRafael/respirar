@@ -2,6 +2,11 @@ import { StyleSheet } from 'react-native';
 import { theme } from '../../styles/theme';
 
 export const styles = StyleSheet.create({
+  breatheContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   outsideAirContainer: {
     // width: 250,
     // height: 250,

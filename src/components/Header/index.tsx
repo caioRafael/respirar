@@ -19,7 +19,7 @@ export function Header() {
       }}
       transition={{
         type: 'timing',
-        duration: 3000
+        duration: 300
       }}
     >
       <Text style={styles.textHeader}>Respirar</Text>
