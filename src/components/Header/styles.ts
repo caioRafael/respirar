@@ -17,7 +17,6 @@ export const styles = StyleSheet.create({
   },
   textHeader: {
     fontSize: 20,
-    // fontWeight: "bold",
     fontFamily: theme.fonts.primary700,
     color: theme.colors.backgroudBlue,
   }

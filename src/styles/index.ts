@@ -5,9 +5,8 @@ import { theme } from './theme';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // padding: 24,
-    // backgroundColor: theme.colors.darkBackgroud
-    backgroundColor: theme.colors.whiteBackground
+    backgroundColor: theme.colors.darkBackgroud
+    // backgroundColor: theme.colors.whiteBackground
   },
 
   header: {

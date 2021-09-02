@@ -8,26 +8,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 30,
   },
-  outsideAirContainer: {
-    // width: 250,
-    // height: 250,
-
-    alignItems: 'center',
-    justifyContent: 'center',
-
-    borderRadius: 250,
-    backgroundColor: theme.colors.gray
-  },
-  indoorAirContainer: {
-    width: 150,
-    height: 150,
-
-    alignItems: 'center',
-    justifyContent: 'center',
-
-    borderRadius: 250,
-    backgroundColor: theme.colors.blue
-  },
 
   button: {
     position: 'absolute',
