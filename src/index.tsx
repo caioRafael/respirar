@@ -6,6 +6,7 @@ import { styles } from './styles'
 import { Header } from './components/Header';
 import { Body } from './components/Body';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { BreatheProvider } from './contexts/BreatheContext';
 
 export default function Respirar() {
   return (
@@ -13,7 +14,9 @@ export default function Respirar() {
       <SafeAreaView style={styles.container}>
         <StatusBar style="auto" />
         <Header />
-        <Body />
+        <BreatheProvider>
+          <Body />
+        </BreatheProvider>
       </SafeAreaView>
     </ThemeProvider>
   );
