@@ -11,6 +11,16 @@ export const theme = {
     darkBackgroud: '#313858'
   },
 
+  darkMode: {
+    darkBackgroud: '#313858',
+    white: '#f3f4f5',
+  },
+
+  whiteMode: {
+    whiteBackground: '#f3f4f5',
+    darkBLue: '#090f22',
+  },
+
   fonts: {
     primary400: 'Roboto_400Regular',
     primary500: 'Roboto_500Medium',

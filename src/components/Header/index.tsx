@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
-import { Text } from 'react-native'
+import { Text, TouchableOpacity } from 'react-native'
 import { MotiView } from 'moti'
 import { Feather } from '@expo/vector-icons';
 
 import { styles } from './styles';
 import { theme } from '../../styles/theme';
+import { useTheme } from '../../hooks/useTheme';
 
 export function Header() {
-  const [darkMode, setDarckMode] = useState<boolean>(false)
+  const { mode, alterMode } = useTheme()
+
   return (
     <MotiView
       style={styles.header}
@@ -23,11 +25,13 @@ export function Header() {
       }}
     >
       <Text style={styles.textHeader}>Respirar</Text>
-      {darkMode ?
-        <Feather name="moon" size={24} color={theme.colors.white} />
-        :
-        <Feather name="sun" size={24} color={theme.colors.white} />
-      }
+      <TouchableOpacity onPress={alterMode}>
+        {mode ?
+          <Feather name="moon" size={24} color={theme.colors.darkBLue} />
+          :
+          <Feather name="sun" size={24} color={theme.colors.white} />
+        }
+      </TouchableOpacity>
     </MotiView>
   )
 }
